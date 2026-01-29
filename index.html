@@ -1,0 +1,274 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>App Support</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+            line-height: 1.6;
+            color: #1a1a1a;
+            background-color: #ffffff;
+        }
+
+        .container {
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        header {
+            background-color: #000000;
+            color: white;
+            padding: 40px 0;
+            border-bottom: 1px solid #e5e5e5;
+        }
+
+        header h1 {
+            font-size: 1.75rem;
+            font-weight: 600;
+            letter-spacing: -0.5px;
+        }
+
+        main {
+            padding: 60px 20px;
+        }
+
+        section {
+            margin-bottom: 60px;
+        }
+
+        .intro {
+            text-align: center;
+            font-size: 1.1rem;
+            color: #666;
+            margin-bottom: 50px;
+        }
+
+        .apps-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+            margin-bottom: 60px;
+        }
+
+        .app-card {
+            border: 1px solid #e5e5e5;
+            border-radius: 8px;
+            padding: 30px;
+            background: #fafafa;
+        }
+
+        .app-card h2 {
+            font-size: 1.5rem;
+            font-weight: 600;
+            margin-bottom: 10px;
+            color: #000;
+        }
+
+        .badge {
+            display: inline-block;
+            background-color: #000;
+            color: white;
+            padding: 4px 12px;
+            border-radius: 4px;
+            font-size: 0.75rem;
+            font-weight: 500;
+            margin-bottom: 15px;
+            letter-spacing: 0.5px;
+        }
+
+        .app-card p {
+            font-size: 0.95rem;
+            line-height: 1.6;
+            color: #4a4a4a;
+        }
+
+        .contact-section {
+            border-top: 1px solid #e5e5e5;
+            padding-top: 40px;
+        }
+
+        .contact-section h2 {
+            font-size: 1.5rem;
+            font-weight: 600;
+            margin-bottom: 20px;
+            color: #000;
+        }
+
+        .contact-box {
+            background: #fafafa;
+            border: 1px solid #e5e5e5;
+            border-radius: 8px;
+            padding: 25px;
+        }
+
+        .contact-box p {
+            font-size: 1rem;
+            margin-bottom: 10px;
+        }
+
+        .contact-box strong {
+            color: #000;
+            font-weight: 600;
+        }
+
+        .contact-box a {
+            color: #0066cc;
+            text-decoration: none;
+        }
+
+        .contact-box a:hover {
+            text-decoration: underline;
+        }
+
+        .note {
+            font-size: 0.9rem;
+            color: #666;
+            margin-top: 10px;
+        }
+
+        .faq-section {
+            border-top: 1px solid #e5e5e5;
+            padding-top: 40px;
+        }
+
+        .faq-section h2 {
+            font-size: 1.5rem;
+            font-weight: 600;
+            margin-bottom: 30px;
+            color: #000;
+        }
+
+        .faq-item {
+            margin-bottom: 25px;
+            padding-bottom: 25px;
+            border-bottom: 1px solid #f0f0f0;
+        }
+
+        .faq-item:last-child {
+            border-bottom: none;
+        }
+
+        .faq-item strong {
+            display: block;
+            font-size: 1rem;
+            font-weight: 600;
+            color: #000;
+            margin-bottom: 8px;
+        }
+
+        .faq-item p {
+            font-size: 0.95rem;
+            color: #4a4a4a;
+            line-height: 1.6;
+        }
+
+        footer {
+            background-color: #fafafa;
+            border-top: 1px solid #e5e5e5;
+            text-align: center;
+            padding: 30px 20px;
+            margin-top: 60px;
+        }
+
+        footer p {
+            font-size: 0.85rem;
+            color: #666;
+        }
+
+        @media (max-width: 768px) {
+            header h1 {
+                font-size: 1.5rem;
+            }
+            
+            main {
+                padding: 40px 20px;
+            }
+            
+            .apps-grid {
+                grid-template-columns: 1fr;
+                gap: 20px;
+            }
+            
+            .app-card {
+                padding: 25px;
+            }
+            
+            section {
+                margin-bottom: 40px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="container">
+            <h1>App Support</h1>
+        </div>
+    </header>
+
+    <main class="container">
+        <section class="intro">
+            <p>Support for iOS applications. If you need help or have questions, please contact us below.</p>
+        </section>
+
+        <section class="apps-grid">
+            <div class="app-card">
+                <h2>Log Calculator</h2>
+                <span class="badge">iOS</span>
+                <p>Professional forestry calculator for sawmill operators, loggers, and woodworkers. Calculate board feet using industry-standard scales including New Brunswick, Ontario, and Doyle scales, plus firewood volume calculations.</p>
+            </div>
+
+            <div class="app-card">
+                <h2>Easy Remind</h2>
+                <span class="badge">iOS</span>
+                <p>Simple, intuitive reminder app to help you stay organized and never forget important tasks.</p>
+            </div>
+        </section>
+
+        <section class="contact-section">
+            <h2>Contact Support</h2>
+            <div class="contact-box">
+                <p><strong>Email:</strong> <a href="mailto:techmeuse@gmail.com">techmeuse@gmail.com</a></p>
+                <p class="note">Typical response time: 24-48 hours</p>
+            </div>
+        </section>
+
+        <section class="faq-section">
+            <h2>Frequently Asked Questions</h2>
+            
+            <div class="faq-item">
+                <strong>Which measurement scales are supported in Log Calculator?</strong>
+                <p>Log Calculator supports New Brunswick, Ontario, and Doyle scales for board feet calculations, plus firewood volume measurements.</p>
+            </div>
+
+            <div class="faq-item">
+                <strong>Can I use the apps offline?</strong>
+                <p>Yes, both apps work completely offline with no internet connection required.</p>
+            </div>
+
+            <div class="faq-item">
+                <strong>How do I request a new feature?</strong>
+                <p>Send an email to techmeuse@gmail.com with your suggestion.</p>
+            </div>
+
+            <div class="faq-item">
+                <strong>Do the apps collect my data?</strong>
+                <p>No. The apps do not collect personal information, track usage, or share data with third parties.</p>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <p>&copy; 2026 All rights reserved. Made in Nova Scotia, Canada.</p>
+    </footer>
+</body>
+</html>
