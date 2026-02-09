@@ -53,17 +53,32 @@
         }
 
         .apps-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-            gap: 30px;
             margin-bottom: 60px;
         }
 
         .app-card {
             border: 1px solid #e5e5e5;
             border-radius: 8px;
-            padding: 30px;
+            padding: 25px;
             background: #fafafa;
+            margin-bottom: 20px;
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+
+        .app-card:hover {
+            background: #f0f0f0;
+            border-color: #d0d0d0;
+        }
+
+        .app-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .app-title-section {
+            flex: 1;
         }
 
         .app-card h2 {
@@ -81,7 +96,6 @@
             border-radius: 4px;
             font-size: 0.75rem;
             font-weight: 500;
-            margin-bottom: 15px;
             letter-spacing: 0.5px;
         }
 
@@ -89,6 +103,62 @@
             font-size: 0.95rem;
             line-height: 1.6;
             color: #4a4a4a;
+            margin-top: 15px;
+        }
+
+        .arrow {
+            font-size: 1.5rem;
+            color: #666;
+            transition: transform 0.3s ease;
+        }
+
+        .arrow.open {
+            transform: rotate(90deg);
+        }
+
+        .app-details {
+            max-height: 0;
+            overflow: hidden;
+            transition: max-height 0.3s ease;
+        }
+
+        .app-details.open {
+            max-height: 1000px;
+            margin-top: 20px;
+        }
+
+        .app-details-content {
+            padding-top: 20px;
+            border-top: 1px solid #e5e5e5;
+        }
+
+        .detail-section {
+            margin-bottom: 20px;
+        }
+
+        .detail-section h3 {
+            font-size: 1.1rem;
+            font-weight: 600;
+            color: #000;
+            margin-bottom: 10px;
+        }
+
+        .detail-section ul {
+            list-style: none;
+            padding-left: 0;
+        }
+
+        .detail-section li {
+            padding: 5px 0;
+            color: #4a4a4a;
+            font-size: 0.95rem;
+        }
+
+        .detail-section li:before {
+            content: "• ";
+            color: #000;
+            font-weight: bold;
+            margin-right: 8px;
         }
 
         .contact-section {
@@ -135,42 +205,6 @@
             margin-top: 10px;
         }
 
-        .faq-section {
-            border-top: 1px solid #e5e5e5;
-            padding-top: 40px;
-        }
-
-        .faq-section h2 {
-            font-size: 1.5rem;
-            font-weight: 600;
-            margin-bottom: 30px;
-            color: #000;
-        }
-
-        .faq-item {
-            margin-bottom: 25px;
-            padding-bottom: 25px;
-            border-bottom: 1px solid #f0f0f0;
-        }
-
-        .faq-item:last-child {
-            border-bottom: none;
-        }
-
-        .faq-item strong {
-            display: block;
-            font-size: 1rem;
-            font-weight: 600;
-            color: #000;
-            margin-bottom: 8px;
-        }
-
-        .faq-item p {
-            font-size: 0.95rem;
-            color: #4a4a4a;
-            line-height: 1.6;
-        }
-
         footer {
             background-color: #fafafa;
             border-top: 1px solid #e5e5e5;
@@ -193,13 +227,8 @@
                 padding: 40px 20px;
             }
             
-            .apps-grid {
-                grid-template-columns: 1fr;
-                gap: 20px;
-            }
-            
             .app-card {
-                padding: 25px;
+                padding: 20px;
             }
             
             section {
@@ -217,20 +246,104 @@
 
     <main class="container">
         <section class="intro">
-            <p>Support for iOS applications. If you need help or have questions, please contact us below.</p>
+            <p>Select an app below for support information and FAQs.</p>
         </section>
 
         <section class="apps-grid">
-            <div class="app-card">
-                <h2>Log Calculator</h2>
-                <span class="badge">iOS</span>
-                <p>Professional forestry calculator for sawmill operators, loggers, and woodworkers. Calculate board feet using industry-standard scales including New Brunswick, Ontario, and Doyle scales, plus firewood volume calculations.</p>
+            <div class="app-card" onclick="toggleApp('logcalc')">
+                <div class="app-header">
+                    <div class="app-title-section">
+                        <h2>Log Calculator</h2>
+                        <span class="badge">iOS</span>
+                        <p>Professional forestry calculator for sawmill operators, loggers, and woodworkers.</p>
+                    </div>
+                    <div class="arrow" id="arrow-logcalc">›</div>
+                </div>
+                <div class="app-details" id="details-logcalc">
+                    <div class="app-details-content">
+                        <div class="detail-section">
+                            <h3>Features</h3>
+                            <ul>
+                                <li>Multiple forestry scales (New Brunswick, Ontario, Doyle)</li>
+                                <li>Firewood volume calculator</li>
+                                <li>Quick and accurate board feet calculations</li>
+                                <li>Works completely offline</li>
+                            </ul>
+                        </div>
+                        <div class="detail-section">
+                            <h3>FAQs</h3>
+                            <p><strong>Which measurement scales are supported?</strong><br>
+                            Log Calculator supports New Brunswick, Ontario, and Doyle scales for board feet calculations, plus firewood volume measurements.</p>
+                            
+                            <p style="margin-top: 15px;"><strong>Can I use this app offline?</strong><br>
+                            Yes! Log Calculator works completely offline with no internet connection required.</p>
+                        </div>
+                    </div>
+                </div>
             </div>
 
-            <div class="app-card">
-                <h2>Easy Remind</h2>
-                <span class="badge">iOS</span>
-                <p>Simple, intuitive reminder app to help you stay organized and never forget important tasks.</p>
+            <div class="app-card" onclick="toggleApp('remind')">
+                <div class="app-header">
+                    <div class="app-title-section">
+                        <h2>Easy Remind</h2>
+                        <span class="badge">iOS</span>
+                        <p>Simple, intuitive reminder app to help you stay organized.</p>
+                    </div>
+                    <div class="arrow" id="arrow-remind">›</div>
+                </div>
+                <div class="app-details" id="details-remind">
+                    <div class="app-details-content">
+                        <div class="detail-section">
+                            <h3>Features</h3>
+                            <ul>
+                                <li>Easy-to-use interface</li>
+                                <li>Smart notifications</li>
+                                <li>Quick reminder creation</li>
+                                <li>Reliable and lightweight</li>
+                            </ul>
+                        </div>
+                        <div class="detail-section">
+                            <h3>FAQs</h3>
+                            <p><strong>How do I set up notifications?</strong><br>
+                            The app will request notification permissions on first launch. You can manage these in your iPhone Settings.</p>
+                            
+                            <p style="margin-top: 15px;"><strong>Does the app work offline?</strong><br>
+                            Yes, Easy Remind works completely offline.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="app-card" onclick="toggleApp('split')">
+                <div class="app-header">
+                    <div class="app-title-section">
+                        <h2>Split Monkey</h2>
+                        <span class="badge">iOS</span>
+                        <p>Easy expense splitting app. Track shared expenses and settle up with groups.</p>
+                    </div>
+                    <div class="arrow" id="arrow-split">›</div>
+                </div>
+                <div class="app-details" id="details-split">
+                    <div class="app-details-content">
+                        <div class="detail-section">
+                            <h3>Features</h3>
+                            <ul>
+                                <li>Split expenses with friends and groups</li>
+                                <li>Track who owes what</li>
+                                <li>Simple and straightforward interface</li>
+                                <li>Keep history of shared expenses</li>
+                            </ul>
+                        </div>
+                        <div class="detail-section">
+                            <h3>FAQs</h3>
+                            <p><strong>How does expense splitting work?</strong><br>
+                            Add an expense, select who it should be split between, and Split Monkey automatically calculates who owes what.</p>
+                            
+                            <p style="margin-top: 15px;"><strong>Can I split expenses unevenly?</strong><br>
+                            Yes, you can customize how expenses are divided among group members.</p>
+                        </div>
+                    </div>
+                </div>
             </div>
         </section>
 
@@ -241,34 +354,37 @@
                 <p class="note">Typical response time: 24-48 hours</p>
             </div>
         </section>
-
-        <section class="faq-section">
-            <h2>Frequently Asked Questions</h2>
-            
-            <div class="faq-item">
-                <strong>Which measurement scales are supported in Log Calculator?</strong>
-                <p>Log Calculator supports New Brunswick, Ontario, and Doyle scales for board feet calculations, plus firewood volume measurements.</p>
-            </div>
-
-            <div class="faq-item">
-                <strong>Can I use the apps offline?</strong>
-                <p>Yes, both apps work completely offline with no internet connection required.</p>
-            </div>
-
-            <div class="faq-item">
-                <strong>How do I request a new feature?</strong>
-                <p>Send an email to techmeuse@gmail.com with your suggestion.</p>
-            </div>
-
-            <div class="faq-item">
-                <strong>Do the apps collect my data?</strong>
-                <p>No. The apps do not collect personal information, track usage, or share data with third parties.</p>
-            </div>
-        </section>
     </main>
 
     <footer>
         <p>&copy; 2026 All rights reserved. Made in Nova Scotia, Canada.</p>
     </footer>
+
+    <script>
+        function toggleApp(appId) {
+            const details = document.getElementById('details-' + appId);
+            const arrow = document.getElementById('arrow-' + appId);
+            
+            // Close all other apps
+            const allDetails = document.querySelectorAll('.app-details');
+            const allArrows = document.querySelectorAll('.arrow');
+            
+            allDetails.forEach(detail => {
+                if (detail.id !== 'details-' + appId) {
+                    detail.classList.remove('open');
+                }
+            });
+            
+            allArrows.forEach(arr => {
+                if (arr.id !== 'arrow-' + appId) {
+                    arr.classList.remove('open');
+                }
+            });
+            
+            // Toggle current app
+            details.classList.toggle('open');
+            arrow.classList.toggle('open');
+        }
+    </script>
 </body>
 </html>
