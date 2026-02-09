@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>App Support</title>
+    <title>Gentle Somatic Yoga - Halifax & Dartmouth</title>
     <style>
         * {
             margin: 0;
@@ -12,379 +12,550 @@
         }
 
         body {
-            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
             line-height: 1.6;
-            color: #1a1a1a;
-            background-color: #ffffff;
+            color: #333;
+            background-color: #f5f8f5;
+        }
+
+        /* Hero Section with Background Image */
+        .hero {
+            position: relative;
+            height: 85vh;
+            min-height: 600px;
+            background-color: #000000;
+            background-image: linear-gradient(rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.3)), url('Image/mom1.jpg');
+            background-size: 85% auto;
+            background-position: center;
+            background-repeat: no-repeat;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            text-align: center;
+        }
+
+        .hero-content {
+            max-width: 900px;
+            padding: 2rem;
+            animation: fadeIn 1.5s ease-in;
+            position: absolute;
+            top: 8%;
+        }
+
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(20px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        .hero h1 {
+            font-size: 5rem;
+            font-weight: 300;
+            margin-bottom: 1rem;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.5);
+            letter-spacing: 2px;
+        }
+
+        .hero .subtitle {
+            font-size: 1.9rem;
+            margin-bottom: 2rem;
+            font-weight: 300;
+            text-shadow: 1px 1px 3px rgba(0,0,0,0.5);
+        }
+
+        .hero .location {
+            font-size: 1.6rem;
+            margin-bottom: 2.5rem;
+            opacity: 0.95;
+            text-shadow: 1px 1px 3px rgba(0,0,0,0.5);
+        }
+
+        /* Main Info Section */
+        .intro {
+            background: white;
+            padding: 5rem 0;
         }
 
         .container {
-            max-width: 800px;
+            max-width: 1200px;
             margin: 0 auto;
             padding: 0 20px;
         }
 
-        header {
-            background-color: #000000;
-            color: white;
-            padding: 40px 0;
-            border-bottom: 1px solid #e5e5e5;
-        }
-
-        header h1 {
-            font-size: 1.75rem;
-            font-weight: 600;
-            letter-spacing: -0.5px;
-        }
-
-        main {
-            padding: 60px 20px;
-        }
-
-        section {
-            margin-bottom: 60px;
-        }
-
-        .intro {
+        .intro-content {
+            max-width: 900px;
+            margin: 0 auto;
             text-align: center;
-            font-size: 1.1rem;
+        }
+
+        .intro h2 {
+            font-size: 2.5rem;
+            color: #6B8E23;
+            margin-bottom: 2rem;
+            font-weight: 400;
+        }
+
+        .intro p {
+            font-size: 1.2rem;
+            color: #555;
+            margin-bottom: 1.5rem;
+            line-height: 1.9;
+        }
+
+        .intro .highlight {
+            background: linear-gradient(135deg, #f0f8f0 0%, #e8f5e8 100%);
+            padding: 2.5rem;
+            border-radius: 15px;
+            margin: 3rem 0;
+            border-left: 5px solid #6B8E23;
+        }
+
+        /* Benefits Section */
+        .benefits {
+            background: linear-gradient(135deg, #e8f5e9 0%, #c8e6c9 100%);
+            padding: 5rem 0;
+        }
+
+        .benefits h2 {
+            text-align: center;
+            font-size: 2.5rem;
+            color: #2E7D32;
+            margin-bottom: 4rem;
+            font-weight: 400;
+        }
+
+        .benefits-grid {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 2.5rem;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        @media (max-width: 1024px) {
+            .benefits-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+            
+            .classes-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+        }
+
+        .benefit-card {
+            background: white;
+            padding: 2.5rem;
+            border-radius: 15px;
+            box-shadow: 0 5px 20px rgba(0,0,0,0.1);
+            text-align: center;
+            transition: all 0.3s ease;
+            border-top: 4px solid #6B8E23;
+        }
+
+        .benefit-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 8px 30px rgba(0,0,0,0.15);
+        }
+
+        .benefit-card .icon {
+            font-size: 3rem;
+            margin-bottom: 1rem;
+        }
+
+        .benefit-card h3 {
+            color: #2E7D32;
+            margin-bottom: 1rem;
+            font-size: 1.4rem;
+            font-weight: 500;
+        }
+
+        .benefit-card p {
             color: #666;
-            margin-bottom: 50px;
+            line-height: 1.7;
+            font-size: 1.05rem;
         }
 
-        .apps-grid {
-            margin-bottom: 60px;
+        /* Teacher Section */
+        .teacher {
+            padding: 5rem 0;
+            background: white;
         }
 
-        .app-card {
-            border: 1px solid #e5e5e5;
-            border-radius: 8px;
-            padding: 25px;
-            background: #fafafa;
-            margin-bottom: 20px;
-            cursor: pointer;
+        .teacher-content {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 4rem;
+            align-items: center;
+            max-width: 1100px;
+            margin: 0 auto;
+        }
+
+        .teacher-image {
+            position: relative;
+        }
+
+        .teacher-image img {
+            width: 100%;
+            height: auto;
+            border-radius: 20px;
+            box-shadow: 0 10px 40px rgba(0,0,0,0.15);
+        }
+
+        .teacher-text h2 {
+            font-size: 2.5rem;
+            color: #6B8E23;
+            margin-bottom: 2rem;
+            font-weight: 400;
+        }
+
+        .teacher-text p {
+            font-size: 1.15rem;
+            color: #555;
+            line-height: 1.8;
+            margin-bottom: 1.5rem;
+        }
+
+        /* Call to Action */
+        .cta {
+            background: linear-gradient(135deg, #6B8E23 0%, #558B2F 100%);
+            color: white;
+            padding: 5rem 0;
+            text-align: center;
+        }
+
+        .cta h2 {
+            font-size: 2.5rem;
+            margin-bottom: 1rem;
+            font-weight: 400;
+        }
+
+        .cta p {
+            font-size: 1.3rem;
+            margin-bottom: 2.5rem;
+            opacity: 0.95;
+        }
+
+        .contact-info {
+            margin-top: 3rem;
+        }
+
+        .contact-item {
+            font-size: 1.2rem;
+            margin: 1rem 0;
+            font-weight: 500;
+        }
+
+        .contact-item a {
+            color: white;
+            text-decoration: none;
+            border-bottom: 2px solid rgba(255, 255, 255, 0.5);
             transition: all 0.3s ease;
         }
 
-        .app-card:hover {
-            background: #f0f0f0;
-            border-color: #d0d0d0;
+        .contact-item a:hover {
+            border-bottom: 2px solid white;
+            opacity: 0.8;
         }
 
-        .app-header {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
+        /* Classes Section */
+        .classes {
+            background: white;
+            padding: 5rem 0;
         }
 
-        .app-title-section {
-            flex: 1;
-        }
-
-        .app-card h2 {
-            font-size: 1.5rem;
-            font-weight: 600;
-            margin-bottom: 10px;
-            color: #000;
-        }
-
-        .badge {
-            display: inline-block;
-            background-color: #000;
-            color: white;
-            padding: 4px 12px;
-            border-radius: 4px;
-            font-size: 0.75rem;
-            font-weight: 500;
-            letter-spacing: 0.5px;
-        }
-
-        .app-card p {
-            font-size: 0.95rem;
-            line-height: 1.6;
-            color: #4a4a4a;
-            margin-top: 15px;
-        }
-
-        .arrow {
-            font-size: 1.5rem;
-            color: #666;
-            transition: transform 0.3s ease;
-        }
-
-        .arrow.open {
-            transform: rotate(90deg);
-        }
-
-        .app-details {
-            max-height: 0;
-            overflow: hidden;
-            transition: max-height 0.3s ease;
-        }
-
-        .app-details.open {
-            max-height: 1000px;
-            margin-top: 20px;
-        }
-
-        .app-details-content {
-            padding-top: 20px;
-            border-top: 1px solid #e5e5e5;
-        }
-
-        .detail-section {
-            margin-bottom: 20px;
-        }
-
-        .detail-section h3 {
-            font-size: 1.1rem;
-            font-weight: 600;
-            color: #000;
-            margin-bottom: 10px;
-        }
-
-        .detail-section ul {
-            list-style: none;
-            padding-left: 0;
-        }
-
-        .detail-section li {
-            padding: 5px 0;
-            color: #4a4a4a;
-            font-size: 0.95rem;
-        }
-
-        .detail-section li:before {
-            content: "• ";
-            color: #000;
-            font-weight: bold;
-            margin-right: 8px;
-        }
-
-        .contact-section {
-            border-top: 1px solid #e5e5e5;
-            padding-top: 40px;
-        }
-
-        .contact-section h2 {
-            font-size: 1.5rem;
-            font-weight: 600;
-            margin-bottom: 20px;
-            color: #000;
-        }
-
-        .contact-box {
-            background: #fafafa;
-            border: 1px solid #e5e5e5;
-            border-radius: 8px;
-            padding: 25px;
-        }
-
-        .contact-box p {
-            font-size: 1rem;
-            margin-bottom: 10px;
-        }
-
-        .contact-box strong {
-            color: #000;
-            font-weight: 600;
-        }
-
-        .contact-box a {
-            color: #0066cc;
-            text-decoration: none;
-        }
-
-        .contact-box a:hover {
-            text-decoration: underline;
-        }
-
-        .note {
-            font-size: 0.9rem;
-            color: #666;
-            margin-top: 10px;
-        }
-
-        footer {
-            background-color: #fafafa;
-            border-top: 1px solid #e5e5e5;
+        .classes h2 {
             text-align: center;
-            padding: 30px 20px;
-            margin-top: 60px;
+            font-size: 2.5rem;
+            color: #6B8E23;
+            margin-bottom: 1rem;
+            font-weight: 400;
+        }
+
+        .classes-subtitle {
+            text-align: center;
+            font-size: 1.3rem;
+            color: #2E7D32;
+            margin-bottom: 3rem;
+            font-weight: 500;
+        }
+
+        .classes-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 2.5rem;
+            max-width: 1200px;
+            margin: 0 auto 3rem;
+        }
+
+        .class-card {
+            background: linear-gradient(135deg, #f0f8f0 0%, #e8f5e8 100%);
+            padding: 2.5rem;
+            border-radius: 15px;
+            box-shadow: 0 5px 20px rgba(0,0,0,0.1);
+            text-align: center;
+            border-top: 4px solid #6B8E23;
+        }
+
+        .class-card h3 {
+            color: #2E7D32;
+            font-size: 1.5rem;
+            margin-bottom: 1.5rem;
+            font-weight: 500;
+        }
+
+        .class-time {
+            font-size: 1.15rem;
+            color: #333;
+            font-weight: 600;
+            margin: 1.5rem 0;
+            line-height: 1.8;
+        }
+
+        .class-location {
+            font-size: 1.05rem;
+            color: #555;
+            margin-top: 1rem;
+        }
+
+        .class-note {
+            font-size: 1.05rem;
+            color: #555;
+            line-height: 1.7;
+            margin-top: 1rem;
+        }
+
+        .summer-classes {
+            background: linear-gradient(135deg, #fff9e6 0%, #ffeaa7 100%);
+            padding: 2.5rem;
+            border-radius: 15px;
+            text-align: center;
+            max-width: 800px;
+            margin: 3rem auto 0;
+            border-left: 5px solid #f39c12;
+        }
+
+        .summer-classes h3 {
+            color: #d35400;
+            font-size: 1.6rem;
+            margin-bottom: 1rem;
+        }
+
+        .summer-classes p {
+            color: #555;
+            font-size: 1.1rem;
+            line-height: 1.7;
+        }
+
+        .btn {
+            display: inline-block;
+            padding: 1.2rem 3rem;
+            background: white;
+            color: #6B8E23;
+            text-decoration: none;
+            border-radius: 50px;
+            font-size: 1.15rem;
+            font-weight: 600;
+            transition: all 0.3s ease;
+            box-shadow: 0 5px 20px rgba(0,0,0,0.2);
+        }
+
+        .btn:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 8px 30px rgba(0,0,0,0.3);
+            background: #f8f8f8;
+        }
+
+        /* Footer */
+        footer {
+            background: #2c3e2c;
+            color: white;
+            text-align: center;
+            padding: 2.5rem 0;
         }
 
         footer p {
-            font-size: 0.85rem;
-            color: #666;
+            opacity: 0.9;
+            font-size: 1.05rem;
         }
 
+        /* Responsive Design */
         @media (max-width: 768px) {
-            header h1 {
-                font-size: 1.5rem;
+            .hero {
+                height: 70vh;
+                min-height: 500px;
             }
-            
-            main {
-                padding: 40px 20px;
+
+            .hero h1 {
+                font-size: 2.5rem;
             }
-            
-            .app-card {
-                padding: 20px;
+
+            .hero .subtitle {
+                font-size: 1.2rem;
             }
-            
-            section {
-                margin-bottom: 40px;
+
+            .intro h2,
+            .benefits h2,
+            .teacher-text h2,
+            .classes h2 {
+                font-size: 2rem;
+            }
+
+            .intro p,
+            .teacher-text p {
+                font-size: 1.05rem;
+            }
+
+            .benefits-grid {
+                grid-template-columns: 1fr;
+                gap: 2rem;
+            }
+
+            .classes-grid {
+                grid-template-columns: 1fr;
+                gap: 2rem;
+            }
+
+            .teacher-content {
+                grid-template-columns: 1fr;
+                gap: 3rem;
+            }
+
+            .teacher-image {
+                order: -1;
             }
         }
     </style>
 </head>
 <body>
-    <header>
-        <div class="container">
-            <h1>App Support</h1>
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="hero-content">
+            <h1>Gentle Somatic Yoga</h1>
+            <p class="subtitle">Revolutionary Movement Re-Education</p>
+            <p class="location">🌿 Serving Halifax & Dartmouth 🌿</p>
         </div>
-    </header>
+    </section>
 
-    <main class="container">
-        <section class="intro">
-            <p>Select an app below for support information and FAQs.</p>
-        </section>
-
-        <section class="apps-grid">
-            <div class="app-card" onclick="toggleApp('logcalc')">
-                <div class="app-header">
-                    <div class="app-title-section">
-                        <h2>Log Calculator</h2>
-                        <span class="badge">iOS</span>
-                        <p>Professional forestry calculator for sawmill operators, loggers, and woodworkers.</p>
-                    </div>
-                    <div class="arrow" id="arrow-logcalc">›</div>
+    <!-- Introduction Section -->
+    <section class="intro">
+        <div class="container">
+            <div class="intro-content">
+                <h2>What is Somatic Yoga?</h2>
+                <p><strong>Soma</strong> - our living body<br>
+                <strong>Yoga</strong> - the union of body, mind and spirit</p>
+                
+                <div class="highlight">
+                    <p>Somatic yoga is a gentle, mindful movement practice coordinated with breath that connects the body with the brain through the nervous system.</p>
                 </div>
-                <div class="app-details" id="details-logcalc">
-                    <div class="app-details-content">
-                        <div class="detail-section">
-                            <h3>Features</h3>
-                            <ul>
-                                <li>Multiple forestry scales (New Brunswick, Ontario, Doyle)</li>
-                                <li>Firewood volume calculator</li>
-                                <li>Quick and accurate board feet calculations</li>
-                                <li>Works completely offline</li>
-                            </ul>
-                        </div>
-                        <div class="detail-section">
-                            <h3>FAQs</h3>
-                            <p><strong>Which measurement scales are supported?</strong><br>
-                            Log Calculator supports New Brunswick, Ontario, and Doyle scales for board feet calculations, plus firewood volume measurements.</p>
-                            
-                            <p style="margin-top: 15px;"><strong>Can I use this app offline?</strong><br>
-                            Yes! Log Calculator works completely offline with no internet connection required.</p>
-                        </div>
-                    </div>
+                
+                <p>The healing practice of somatic yoga rewires the brain, informing muscles to release and relax and to function as they should.</p>
+                
+                <p>Somatic yoga uses a technique called <strong>Pandiculation</strong> to release muscle tensions. Pandiculation focuses on the contraction of muscles, and a slow controlled release and relaxation. Pandiculation releases muscular tension that may have been caused by trauma.</p>
+                
+                <div class="highlight">
+                    <p><em>Through awareness we learn about our body, what it needs and doesn't need, and what doesn't serve us.</em></p>
                 </div>
             </div>
+        </div>
+    </section>
 
-            <div class="app-card" onclick="toggleApp('remind')">
-                <div class="app-header">
-                    <div class="app-title-section">
-                        <h2>Easy Remind</h2>
-                        <span class="badge">iOS</span>
-                        <p>Simple, intuitive reminder app to help you stay organized.</p>
-                    </div>
-                    <div class="arrow" id="arrow-remind">›</div>
+    <!-- Benefits Section -->
+    <section class="benefits">
+        <div class="container">
+            <h2>Benefits of Somatic Yoga</h2>
+            <div class="benefits-grid">
+                <div class="benefit-card">
+                    <div class="icon">🌿</div>
+                    <h3>Relieves Pain & Discomforts</h3>
+                    <p>Gentle movements help release muscular tension and patterns that contribute to chronic pain conditions.</p>
                 </div>
-                <div class="app-details" id="details-remind">
-                    <div class="app-details-content">
-                        <div class="detail-section">
-                            <h3>Features</h3>
-                            <ul>
-                                <li>Easy-to-use interface</li>
-                                <li>Smart notifications</li>
-                                <li>Quick reminder creation</li>
-                                <li>Reliable and lightweight</li>
-                            </ul>
-                        </div>
-                        <div class="detail-section">
-                            <h3>FAQs</h3>
-                            <p><strong>How do I set up notifications?</strong><br>
-                            The app will request notification permissions on first launch. You can manage these in your iPhone Settings.</p>
-                            
-                            <p style="margin-top: 15px;"><strong>Does the app work offline?</strong><br>
-                            Yes, Easy Remind works completely offline.</p>
-                        </div>
-                    </div>
+                <div class="benefit-card">
+                    <div class="icon">🧘</div>
+                    <h3>Reduces Stress</h3>
+                    <p>Calm your nervous system and find deep relaxation through mindful, somatic awareness.</p>
+                </div>
+                <div class="benefit-card">
+                    <div class="icon">💫</div>
+                    <h3>Enhances Mobility</h3>
+                    <p>Restore natural, fluid movement patterns and increase your range of motion comfortably.</p>
+                </div>
+                <div class="benefit-card">
+                    <div class="icon">🌟</div>
+                    <h3>Calms the Nervous System</h3>
+                    <p>Balance your autonomic nervous system for better overall health and well-being.</p>
                 </div>
             </div>
+        </div>
+    </section>
 
-            <div class="app-card" onclick="toggleApp('split')">
-                <div class="app-header">
-                    <div class="app-title-section">
-                        <h2>Split Monkey</h2>
-                        <span class="badge">iOS</span>
-                        <p>Easy expense splitting app. Track shared expenses and settle up with groups.</p>
-                    </div>
-                    <div class="arrow" id="arrow-split">›</div>
+    <!-- Teacher Section -->
+    <section class="teacher">
+        <div class="container">
+            <div class="teacher-content">
+                <div class="teacher-image">
+                    <img src="Image/mom2.jpg" alt="Jeannine - Somatic Yoga Teacher">
                 </div>
-                <div class="app-details" id="details-split">
-                    <div class="app-details-content">
-                        <div class="detail-section">
-                            <h3>Features</h3>
-                            <ul>
-                                <li>Split expenses with friends and groups</li>
-                                <li>Track who owes what</li>
-                                <li>Simple and straightforward interface</li>
-                                <li>Keep history of shared expenses</li>
-                            </ul>
-                        </div>
-                        <div class="detail-section">
-                            <h3>FAQs</h3>
-                            <p><strong>How does expense splitting work?</strong><br>
-                            Add an expense, select who it should be split between, and Split Monkey automatically calculates who owes what.</p>
-                            
-                            <p style="margin-top: 15px;"><strong>Can I split expenses unevenly?</strong><br>
-                            Yes, you can customize how expenses are divided among group members.</p>
-                        </div>
-                    </div>
+                <div class="teacher-text">
+                    <h2>Meet Your Teacher</h2>
+                    <p>Jeannine first began practicing yoga in the 70's and has been passionate about it ever since. She began teaching yoga 30 years ago and has completed her 200-hour yoga teacher training at TAYS and 300-hour yoga teacher training at the Himalayan Institute in Pennsylvania plus attended many yoga workshops and trainings. Jeannine has also studied Ayurveda with the Vidya Institute.</p>
+                    
+                    <p>Recently Jeannine completed level 1 and level 2 Somatic Yoga training with Meghan McCarthy.</p>
+                    
+                    <p>Jeannine now teaches somatic yoga classes in person and online. Somatic yoga focuses on mindful movements coordinated with breath, connecting body and brain through the nervous system allowing the body to heal.</p>
+                    
+                    <p>Jeannine has profound dedication for somatic yoga. She loves to learn new, fun somatic exercises to teach them to her students.</p>
                 </div>
             </div>
-        </section>
+        </div>
+    </section>
 
-        <section class="contact-section">
-            <h2>Contact Support</h2>
-            <div class="contact-box">
-                <p><strong>Email:</strong> <a href="mailto:techmeuse@gmail.com">techmeuse@gmail.com</a></p>
-                <p class="note">Typical response time: 24-48 hours</p>
+    <!-- Classes Section -->
+    <section class="classes">
+        <div class="container">
+            <h2>Somatic Yoga Classes</h2>
+            <p class="classes-subtitle">September to June</p>
+            
+            <div class="classes-grid">
+                <div class="class-card">
+                    <h3>💻 Online Classes</h3>
+                    <p class="class-time">Tuesdays<br>7:00pm - 8:05pm</p>
+                    <p class="class-note">Let me know if you are interested and I will send the Zoom link</p>
+                </div>
+                
+                <div class="class-card">
+                    <h3>🏡 In-Person Classes</h3>
+                    <p class="class-time">Wednesdays: 9:25am - 10:25am<br>Fridays: 11:00am - 12:00pm</p>
+                    <p class="class-location">📍 26 Elliot Street, Dartmouth, NS</p>
+                </div>
+                
+                <div class="class-card">
+                    <h3>🌸 Private Sessions</h3>
+                    <p class="class-note">One-on-one somatic yoga sessions available</p>
+                    <p class="class-note">Contact for scheduling</p>
+                </div>
             </div>
-        </section>
-    </main>
+            
+            <div class="summer-classes">
+                <h3>☀️ Summer Classes</h3>
+                <p>Summer classes take place at the Owl Club in Dartmouth. Class times will be announced in the spring.</p>
+            </div>
+        </div>
+    </section>
 
+    <!-- Call to Action -->
+    <section class="cta">
+        <div class="container">
+            <h2>Ready to Begin Your Journey?</h2>
+            <p>Experience the transformative power of Gentle Somatic Yoga</p>
+            
+            <div class="contact-info">
+                <p class="contact-item">📧 <a href="/cdn-cgi/l/email-protection#f29897939c9c9b9c9781dc9d9c97b2959f939b9edc919d9f"><span class="__cf_email__" data-cfemail="dbb1bebab5b5b2b5bea8f5b4b5be9bbcb6bab2b7f5b8b4b6">[email&#160;protected]</span></a></p>
+                <p class="contact-item">📱 <a href="tel:+19024309809">(902) 430-9809</a></p>
+                <p class="contact-item">💙 <a href="https://www.facebook.com/soulsistersyoga1" target="_blank">Soul Yoga on Facebook</a></p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
     <footer>
-        <p>&copy; 2026 All rights reserved. Made in Nova Scotia, Canada.</p>
-    </footer>
-
-    <script>
-        function toggleApp(appId) {
-            const details = document.getElementById('details-' + appId);
-            const arrow = document.getElementById('arrow-' + appId);
-            
-            // Close all other apps
-            const allDetails = document.querySelectorAll('.app-details');
-            const allArrows = document.querySelectorAll('.arrow');
-            
-            allDetails.forEach(detail => {
-                if (detail.id !== 'details-' + appId) {
-                    detail.classList.remove('open');
-                }
-            });
-            
-            allArrows.forEach(arr => {
-                if (arr.id !== 'arrow-' + appId) {
-                    arr.classList.remove('open');
-                }
-            });
-            
-            // Toggle current app
-            details.classList.toggle('open');
-            arrow.classList.toggle('open');
-        }
-    </script>
-</body>
-</html>
+        <div class="co
